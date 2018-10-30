@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'home',
     'menu',
+    'accounts',
+    'Table',
 ]
 
 MIDDLEWARE = [
@@ -125,3 +127,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIR = [
     os.path.join(BASE_DIR, 'static'),
 ]
+
+LOGIN_REDIRECT_URL = "home:home-page"
+LOGOUT_REDIRECT_URL = "home:home-page"

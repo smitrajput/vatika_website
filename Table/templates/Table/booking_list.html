@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    {% for booktable in bookings %}
+
+      <h2>{{booktable.customer}} , {{booktable.date}}</h2>
+
+    {% endfor %}
+  </body>
+</html>
