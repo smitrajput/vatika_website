@@ -18,8 +18,8 @@ class CreateTable(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         table = form.save(commit=False)
         form.instance.booked_by = self.request.user
-        send_mail('Village Vatiki','Hello, from Village Vatika.Your booking is confirmed',
-            'Raghu5910@outlook',[self.request.user.email],fail_silently=False,)
+        send_mail('Village Vatiki','Hello, from Village Vatika.Your booking is confirmed','Raghu5910@outlook',['raghuram5910@gmail.com'],fail_silently=True)
+
         return super(CreateTable, self).form_valid(form)
 
 class MailSent(TemplateView):
