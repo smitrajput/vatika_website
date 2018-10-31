@@ -6,6 +6,7 @@ from django.views.generic import (TemplateView,ListView,
 
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import BookTableForm
+from django.core.mail import send_mail
 
 from django.contrib.auth import get_user_model
 User = get_user_model()
@@ -17,7 +18,14 @@ class CreateTable(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         table = form.save(commit=False)
         form.instance.booked_by = self.request.user
+        send_mail('Village Vatiki','Hello, from Village Vatika.Your booking is confirmed',
+            'Raghu5910@outlook',[self.request.user.email],fail_silently=False,)
         return super(CreateTable, self).form_valid(form)
+
+class MailSent(TemplateView):
+    template_name = 'Table/table_confirm_mail.html'
+
+
 
 class TableListView(LoginRequiredMixin, TemplateView):
     template_name = 'Table/booking_list.html'

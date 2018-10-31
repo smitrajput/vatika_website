@@ -18,4 +18,4 @@ class BookTable(models.Model):
         return self.customer
 
     def get_absolute_url(self):
-        return reverse("menu:menu_list")
+        return reverse('Table:confirm-mail')

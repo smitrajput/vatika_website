@@ -130,3 +130,10 @@ STATICFILES_DIR = [
 
 LOGIN_REDIRECT_URL = "home:home-page"
 LOGOUT_REDIRECT_URL = "home:home-page"
+
+EMAIL_HOST = 'smtp-mail.outlook.com.'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'Raghu5910@outlook.com'
+EMAIL_HOST_PASSWORD = 'imvirat@18'
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
