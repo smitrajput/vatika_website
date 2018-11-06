@@ -5,6 +5,17 @@
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script>
+      $(function() {
+        $( ".datepicker" ).datepicker({
+          changeMonth: true,
+          changeYear: true,
+          yearRange: "1900:2018",
+          // You can put more options here.
+
+        });
+      });
+    </script>
 
 {% endblock %}
 {% block body_block %}
@@ -20,21 +31,10 @@
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.
         </p>
       </div>
-      <!-- <script>
-        $(function() {
-          $( ".datepicker" ).datepicker({
-            changeMonth: true,
-            changeYear: true,
-            yearRange: "1900:2018",
-            // You can put more options here.
-
-          });
-        });
-      </script> -->
       <div class="col-lg-5 reservation-right">
         <form class="form-wrap text-center" method="post">
           {% csrf_token %}
-          {{ form|crispy }}      
+          {{ form|crispy }}
           <button class="primary-btn text-uppercase mt-20">Make Reservation</button>
         </form>
       </div>
