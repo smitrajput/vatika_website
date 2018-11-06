@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    {% for booktable in bookings %}
+{% extends 'base.html' %}
+{% block title %}Feedback{% endblock %}
+{% block body_block %}
+  {% for booktable in bookings %}
 
-      <h2>{{booktable.customer}} , {{booktable.date}}</h2>
+    <h2>{{booktable.customer}} , {{booktable.date}}</h2>
 
-    {% endfor %}
-  </body>
-</html>
+  {% endfor %}
+{% endblock %}
