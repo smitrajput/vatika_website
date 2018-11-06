@@ -24,6 +24,7 @@ urlpatterns = [
     path('accounts/',include(('accounts.urls','accounts'),namespace='accounts')),
     path('menu/',include(('menu.urls','menu'),namespace = 'menu')),
     path('table/',include(('Table.urls','Table'),namespace='Table')),
+    path('feedback/',include(('feedback.urls','feedback'),namespace='feedback')),
     path(r'auth/', include('social_django.urls', namespace='social')),
     path('admin/', admin.site.urls),
 

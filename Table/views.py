@@ -1,9 +1,6 @@
 from django.shortcuts import render
 from .models import BookTable
-from django.views.generic import (TemplateView,ListView,
-                                    DetailView,UpdateView,
-                                    DeleteView,CreateView)
-
+from django.views.generic import (TemplateView,ListView,CreateView)
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import BookTableForm
 from django.core.mail import send_mail
