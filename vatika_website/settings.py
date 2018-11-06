@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'menu',
     'accounts',
     'Table',
-    'feedback'
+    'feedback',
     'social_django',
     'crispy_forms',
 ]
