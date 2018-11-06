@@ -8,7 +8,7 @@ User = get_user_model()
 class BookTable(models.Model):
     booked_by = models.ForeignKey(User,on_delete=models.CASCADE,related_name='booktables')
     customer = models.CharField(max_length=50)
-    contact = models.CharField(max_length=10)
+    contact = models.IntegerField()
     email = models.EmailField(max_length=50)
     total_persons = models.IntegerField()
     date = models.DateField()

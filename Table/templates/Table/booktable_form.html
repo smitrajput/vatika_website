@@ -11,12 +11,9 @@
           changeMonth: true,
           changeYear: true,
           yearRange: "1900:2018",
-          // You can put more options here.
-
         });
       });
     </script>
-
 {% endblock %}
 {% block body_block %}
 <section class="reservation-area section-gap relative">
@@ -34,7 +31,16 @@
       <div class="col-lg-5 reservation-right">
         <form class="form-wrap text-center" method="post">
           {% csrf_token %}
-          {{ form|crispy }}
+          <!-- {{ form|crispy }} -->
+          {% for field in form %}
+            <div class="fieldWrapper">
+                {{ field.errors }}
+                {{ field }}
+                {% if field.help_text %}
+                  <p class="help">{{ field.help_text|safe }}</p>
+                {% endif %}
+            </div>
+          {% endfor %}
           <button class="primary-btn text-uppercase mt-20">Make Reservation</button>
         </form>
       </div>
