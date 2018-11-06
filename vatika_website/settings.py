@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'accounts',
     'Table',
     'social_django',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -127,7 +128,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIR = [
+STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 
@@ -144,6 +145,7 @@ AUTHENTICATION_BACKENDS = (
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY ='119209459564-12ksk30pth9smp4elnt98vnolmpmjbbj.apps.googleusercontent.com'  #Paste CLient Key
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '-pu6j-el729og1tW0TuUsWdu' #Paste Secret Keys
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 EMAIL_HOST = 'smtp-mail.outlook.com.'
 EMAIL_PORT = 587

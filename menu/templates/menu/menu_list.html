@@ -1,12 +1,70 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    {% for item in menu_list  %}
-      <h3>{{item.item_name}}  , {{item.item_price}}</h3>
+{% extends "base.html" %}
+{% block title %}Menu{% endblock %}
+{% block body_block %}
+
+<section class="menu-area section-gap" id="menu">
+<div class="container">
+  <div class="row d-flex justify-content-center">
+    <div class="menu-content pb-70 col-lg-8">
+      <div class="title text-center">
+        <h1 class="mb-10">What kind of Foods we serve for you</h1>
+        <p>Who are in extremely love with eco friendly system.</p>
+      </div>
+    </div>
+  </div>
+
+  <ul class="filter-wrap filters col-lg-12 no-padding">
+      <li class="active" data-filter="*">All Menu</li>
+      <li data-filter=".breakfast">Breakfast</li>
+      <li data-filter=".lunch">Lunch</li>
+      <li data-filter=".dinner">Dinner</li>
+      <li data-filter=".budget-meal">Budget Meal</li>
+      <li data-filter=".buffet">Buffet</li>
+  </ul>
+
+  <div class="filters-content">
+    <div class="row grid">
+    {% for menu in menu_list %}
+      <div class="col-md-6 all">
+        <div class="single-menu">
+          <div class="title-wrap d-flex justify-content-between">
+            <h4>{{ menu.item_name }}</h4>
+            <h4 class="price">{{ menu.item_price }}</h4>
+          </div>
+          <p>Usage of the Internet is becoming more common due to rapid advance.</p>
+        </div>
+      </div>
     {% endfor %}
-  </body>
-</html>
+    <!-- <div class="col-md-6 all dinner">
+      <div class="single-menu">
+        <div class="title-wrap d-flex justify-content-between">
+          <h4>Americano</h4>
+          <h4 class="price">$49</h4>
+        </div>
+        <p>Usage of the Internet is becoming more common due to rapid advance.</p>
+      </div>
+    </div>
+    <div class="col-md-6 all budget-meal">
+      <div class="single-menu">
+        <div class="title-wrap d-flex justify-content-between">
+          <h4>Macchiato</h4>
+          <h4 class="price">$49</h4>
+        </div>
+        <p> Usage of the Internet is becoming more common due to rapid advance.</p>
+      </div>
+    </div>
+    <div class="col-md-6 all breakfast">
+      <div class="single-menu">
+        <div class="title-wrap d-flex justify-content-between">
+          <h4>Mocha</h4>
+          <h4 class="price">$49</h4>
+        </div>
+          <p>Usage of the Internet is becoming more common due to rapid advance.</p>
+      </div>
+    </div> -->
+  </div>
+</section>
+<!-- End menu-area Area -->
+
+
+{% endblock %}

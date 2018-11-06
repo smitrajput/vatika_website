@@ -1,14 +1,33 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <h1>Book a table</h1>
-    <form method="post">
-      {% csrf_token %}
-      {{ form }}
-      <button type="submit" class="btn btn-primary btn-block">Submit</button>
-  </body>
-</html>
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}Reservation{% endblock %}
+{% block body_block %}
+<section class="reservation-area section-gap relative">
+  <div class="overlay overlay-bg"></div>
+  <div class="container">
+    <div class="row justify-content-between align-items-center">
+      <div class="col-lg-6 reservation-left">
+        <h1 class="text-white">Reserve Your Seats
+        to Confirm if You Come
+        with Your Family</h1>
+        <p class="text-white pt-20">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.
+        </p>
+      </div>
+      <div class="col-lg-5 reservation-right">
+        <form class="form-wrap text-center" method="post">
+          {% csrf_token %}
+          {{ form|crispy }}
+          <!-- {% for field in form %}
+          <div class="fieldWrapper">
+              {{ field.errors }}
+              {{ field.label_tag }}: {{ field }}
+          </div>
+          {% endfor %} -->
+          <button class="primary-btn text-uppercase mt-20">Make Reservation</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
