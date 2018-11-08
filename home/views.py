@@ -6,4 +6,4 @@ class AboutPage(TemplateView):
     template_name = 'home/about.html'
 
 class HomePage(TemplateView):
-    template_name = 'home/index.html'
+    template_name = 'base.html'

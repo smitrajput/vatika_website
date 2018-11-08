@@ -1,9 +1,6 @@
 from django.shortcuts import render
 from .models import BookTable
-from django.views.generic import (TemplateView,ListView,
-                                    DetailView,UpdateView,
-                                    DeleteView,CreateView)
-
+from django.views.generic import (TemplateView,ListView,CreateView)
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import BookTableForm
 from django.core.mail import send_mail
@@ -18,8 +15,8 @@ class CreateTable(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         table = form.save(commit=False)
         form.instance.booked_by = self.request.user
-        send_mail('Village Vatiki','Hello, from Village Vatika.Your booking is confirmed',
-            'Raghu5910@outlook',[self.request.user.email],fail_silently=False,)
+        send_mail('Village Vatiki','Hello, from Village Vatika.Your booking is confirmed','Raghu5910@outlook',['raghuram5910@gmail.com'],fail_silently=True)
+
         return super(CreateTable, self).form_valid(form)
 
 class MailSent(TemplateView):
