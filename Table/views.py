@@ -1,9 +1,10 @@
 from django.shortcuts import render
-from .models import BookTable
+from .models import BookTable, BookLawn
 from django.views.generic import (TemplateView,ListView,CreateView)
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .forms import BookTableForm
+from .forms import BookTableForm, BookLawnForm
 from django.core.mail import send_mail
+from django.contrib import messages
 
 from django.contrib.auth import get_user_model
 User = get_user_model()
@@ -16,8 +17,19 @@ class CreateTable(LoginRequiredMixin, CreateView):
         table = form.save(commit=False)
         form.instance.booked_by = self.request.user
         send_mail('Village Vatiki','Hello, from Village Vatika.Your booking is confirmed','Raghu5910@outlook',['raghuram5910@gmail.com'],fail_silently=True)
-
+        messages.success(self.request, f'Table booked for the {self.request.user}!')
         return super(CreateTable, self).form_valid(form)
+
+class CreateLawn(LoginRequiredMixin, CreateView):
+    model = BookLawn
+    form_class = BookLawnForm
+
+    def form_valid(self, form):
+        table = form.save(commit=False)
+        form.instance.booked_by = self.request.user
+        send_mail('Village Vatiki','Hello, from Village Vatika.Your booking is confirmed','Raghu5910@outlook',['raghuram5910@gmail.com'],fail_silently=True)
+        message.success(request, f'Table booked for the {self.request.user}!')
+        return super(CreateLawn, self).form_valid(form)
 
 class MailSent(TemplateView):
     template_name = 'Table/table_confirm_mail.html'

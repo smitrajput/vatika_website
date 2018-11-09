@@ -19,3 +19,19 @@ class BookTable(models.Model):
 
     def get_absolute_url(self):
         return reverse('Table:confirm-mail')
+
+
+class BookLawn(models.Model):
+    booked_by = models.ForeignKey(User,on_delete=models.CASCADE,related_name='booklawns')
+    customer = models.CharField(max_length=50)
+    contact = models.IntegerField()
+    email = models.EmailField(max_length=50)
+    total_persons = models.IntegerField()
+    date = models.DateField()
+    time = models.TimeField()
+
+    def __str__(self):
+        return self.customer
+
+    def get_absolute_url(self):
+        return reverse('Table:confirm-mail')
