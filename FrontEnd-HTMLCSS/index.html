@@ -5,8 +5,8 @@
         <link rel="stylesheet" href="styles.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Oswald|Patrick+Hand|Yanone+Kaffeesatz" rel="stylesheet">
         <link rel="stylesheet" href="menu.css">
-        
-    
+
+
     <body>
          <nav>
             <ul class="topnav" id="dropdownClick">
@@ -18,11 +18,11 @@
                 <li class="dropdownIcon"><a href="javascript:void(0);" onclick="dropdownMenu()">&#9776;</a></li>
             </ul>
         </nav>
-  
+
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                   
+
                     <div class="vid+vv">
                         <video autoplay muted loop id="myVideo">
                           <source src="Food Reel - Eric Yealland.mp4" type="video/mp4">
@@ -32,17 +32,17 @@
                             <h2 class="large">THE ETHNIC FLAVOUR!</h2>
                         </div>
                     </div>
-                    
-                
-                    
+
+
+
                 </div>
-                
+
             </div>
         </div>
-        
-        
+
+
         <div class="container img-cont">
-            
+
             <h1 class="section2Header">Customer Options</h1>
             <div class="row">
                 <div class="col-4">
@@ -77,9 +77,9 @@
                 </div>
             </div>
         </div>
-        
+
     <!-- MENU -->
-        
+
         <div class="container">
             <h1 class="menu-head">MENU</h1>
             <div class="menu-row" id="menu-anchor">
@@ -134,24 +134,24 @@
 
                     </div>
                 </div>
-                
+
                 <br>
 
                 <div class="dots">
-                  <span class="dot" onclick="currentSlide(1)"></span> 
-                  <span class="dot" onclick="currentSlide(2)"></span> 
-                  <span class="dot" onclick="currentSlide(3)"></span> 
-                  <span class="dot" onclick="currentSlide(4)"></span> 
-                 <span class="dot" onclick="currentSlide(5)"></span> 
-                 <span class="dot" onclick="currentSlide(6)"></span> 
-                 <span class="dot" onclick="currentSlide(7)"></span> 
-                 <span class="dot" onclick="currentSlide(8)"></span> 
+                  <span class="dot" onclick="currentSlide(1)"></span>
+                  <span class="dot" onclick="currentSlide(2)"></span>
+                  <span class="dot" onclick="currentSlide(3)"></span>
+                  <span class="dot" onclick="currentSlide(4)"></span>
+                 <span class="dot" onclick="currentSlide(5)"></span>
+                 <span class="dot" onclick="currentSlide(6)"></span>
+                 <span class="dot" onclick="currentSlide(7)"></span>
+                 <span class="dot" onclick="currentSlide(8)"></span>
                 </div>
             </div>
         </div>
-        
+
         <!-- Tables and Lawn Booking -->
-        
+
         <div class="container">
             <div class="row">
                 <div class="col-13">
@@ -168,7 +168,7 @@
                                     <input class="inputbox" type="number"><br><br>
                                     <input type="submit" value="Book">
                                 </div>
-                            </form> 
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -183,9 +183,9 @@
                                     <h2>Password</h2>
                                     <input class="inputbox" type="password">
                                     <h2>Number of hours</h2>
-                                    <input class="inputbox" type="number"><br><br>   
+                                    <input class="inputbox" type="number"><br><br>
                                 </div>
-                            </form> 
+                            </form>
                             <button id="myBtn">Book</button>
                             <div id="myModal" class="modal">
                               <!-- Modal content -->
@@ -199,13 +199,13 @@
 
                             </div>
                         </div>
-                    </div>         
+                    </div>
                 </div>
             </div>
         </div>
-        
+
     <!-- Sign in and Sign up -->
-        
+
         <div class="container">
             <div class="row">
                 <div class="col-13">
@@ -221,7 +221,7 @@
                                     <br><br>
                                     <input type="submit" value="Sign In">
                                 </div>
-                            </form> 
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -239,15 +239,15 @@
                                     <input class="inputbox" type="password"><br><br>
                                     <input type="submit" value="Sign Up">
                                 </div>
-                            </form> 
+                            </form>
                         </div>
-                    </div>         
+                    </div>
                 </div>
             </div>
         </div>
-        
+
         <hr>
-   
+
         <div class="container img-feed">
             <div class="row">
                 <div class="col-12">
@@ -266,15 +266,15 @@
                                     <input class="inputbox" type="text"><br><br>
                                     <input type="submit" value="Submit">
                                 </div>
-                            </form> 
+                            </form>
                         </div>
-                    </div>         
+                    </div>
                 </div>
             </div>
         </div>
-        
+
     <!-- Footer -->
-        
+
         <footer class="footsy">
             <div class="row" id="foot-about">
                 <div class="col-6 mobileStack" id="about">
@@ -292,12 +292,12 @@
                         <li>Email: some.email@id</li>
                     </ul>
                 </div>
-                
+
             </div>
         </footer>
-        
-        
-        
+
+
+
         <script>
             function dropdownMenu() {
                 var x = document.getElementById("dropdownClick");
@@ -324,18 +324,18 @@
               var i;
               var slides = document.getElementsByClassName("mySlides");
               var dots = document.getElementsByClassName("dot");
-              if (n > slides.length) {slideIndex = 1}    
+              if (n > slides.length) {slideIndex = 1}
               if (n < 1) {slideIndex = slides.length}
               for (i = 0; i < slides.length; i++) {
-                  slides[i].style.display = "none";  
+                  slides[i].style.display = "none";
               }
               for (i = 0; i < dots.length; i++) {
                   dots[i].className = dots[i].className.replace(" active", "");
               }
-              slides[slideIndex-1].style.display = "block";  
+              slides[slideIndex-1].style.display = "block";
               dots[slideIndex-1].className += " active";
             }
-            
+
             // Get the modal
             var modal = document.getElementById('myModal');
 
@@ -345,7 +345,7 @@
             // Get the <span> element that closes the modal
             var span = document.getElementsByClassName("close")[0];
 
-            // When the user clicks on the button, open the modal 
+            // When the user clicks on the button, open the modal
             btn.onclick = function() {
                 modal.style.display = "block";
             }
@@ -361,9 +361,9 @@
                     modal.style.display = "none";
                 }
             }
-                
+
 
         </script>
-        
+
     </body>
 </html>
