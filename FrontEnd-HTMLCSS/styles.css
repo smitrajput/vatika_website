@@ -13,6 +13,7 @@ body {
 label {
     font-size: 35px;
     font-weight: 600;
+    font-family: 'Patrick Hand';
 }
 
 p {
@@ -25,12 +26,36 @@ article p {
 }
 
 .container {
+   
     width: 100%;
     margin: auto;
     padding-top: 0;
-    padding-bottom: 4%;
-    
+    padding-bottom: 0;      
 }
+.imag {
+    background-image:url("hiii.png");
+ background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;}
+
+.hello {
+    background-image:url("table.png");
+ background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;}
+.water {
+    background-image:url("hell.png");
+ background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;}
+.lol{
+    background-image:url("UwVemz.png");
+ background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;}
+
+
+
 
 .row {
     width: 100%;
@@ -54,14 +79,24 @@ article p {
 .col-7 {width: 58.33%;}
 .col-8 {width: 66.66%;}
 .col-9 {width: 75%;}
-.col-10 {width: 83.33%;}
-.col-11 {width: 91.66%;}
-.col-12 {width: 100%;}
-
-.col-13 {
-    width: 50%;
+.col-10 {width:75%;
 }
+.col-11 {width: 100%;
 
+}
+.col-12 {width: 50%;
+    margin-left: 350px;
+}
+.col-14 {width :100%; }
+.col-13 {
+    width: 40%;
+    margin-left:100px;
+}
+.col-15 {
+    width:1300px;
+    height:100%;
+    
+}
 * {
     box-sizing: border-box;
 }
@@ -113,8 +148,13 @@ ul.topnav li.dropdownIcon {
 
 /*######### Custom styles ##########*/
 
+.anchor-style {
+    text-decoration: none;
+}
+
 .vid+vv {
-    padding-bottom: 500px;
+    padding: 500px;
+    
 }
 
 div.leftSide-col {
@@ -174,9 +214,10 @@ div.box {
     box-shadow: 0 0 0 1px rgba(0,0,0,.15),
         0 2px 3px 0 rgba(0,0,0,.1);
     opacity: 0.8;
+    font-family: 'Patrick Hand', cursive;
 }
 
-.box2 {
+div.box2 {
     text-align: center;
     margin: 24px;
     padding: 36px 24px 40px 24px;
@@ -184,21 +225,17 @@ div.box {
     background-color: white;
     box-shadow: 0 0 0 1px rgba(0,0,0,.15),
         0 2px 3px 0 rgba(0,0,0,.1);
-    opacity: 0.5;
+    opacity: 0.8;
 }
 
 div.icon {
     width: 100%;
 }
 
-.img-cont {
-    background: url(choices.jpg) no-repeat;
-    background-size: cover;
-}
-
 h1.menu-head {
-    margin-left: 50%;
-    color: black;
+    margin-top: 0;
+    margin-left: 47%;
+    color: white;
     font-family: 'Patrick Hand', cursive;
     letter-spacing: 5px;
     font-size: 55px;
@@ -209,7 +246,15 @@ h1.menu-head {
     display: flex;
     flex-wrap: wrap;
     align-items: center; 
+    
 }
+.image {
+    background-image:url("343299.jpg");
+ background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 
 div.vvImg img {
     display: block;
@@ -227,6 +272,7 @@ button {
     text-align: center;
     margin: 5px;
     border-radius: 7px;
+    font-family: 'Patrick Hand';
 }
 
 button.buttons {
@@ -240,11 +286,15 @@ button.buttons {
 }
 
 h1.section2Header {
+    font-family: 'Patrick Hand', cursive;
     font-size: 55px;
     text-align: center;
+    color: white;
+    margin: 0;
 }
 
 form h2 {
+    font-family: 'Patrick Hand', cursive;
     color: black;
 }
 
@@ -254,6 +304,7 @@ input[type="text"] {
     min-width: 100px;
     padding: 5px;
     border-radius: 7px;
+    font-family: 'Patrick Hand';
 }
 
 input[type="email"] {
@@ -262,6 +313,7 @@ input[type="email"] {
     min-width: 100px;
     padding: 5px;
     border-radius: 7px;
+    font-family: 'Patrick Hand';
 }
 
 input[type="password"] {
@@ -270,6 +322,7 @@ input[type="password"] {
     min-width: 100px;
     padding: 5px;
     border-radius: 7px;
+    font-family: 'Patrick Hand';
 }
 
 input[type="number"] {
@@ -278,6 +331,7 @@ input[type="number"] {
     min-width: 100px;
     padding: 5px;
     border-radius: 7px;
+    font-family: 'Patrick Hand';
 }
 
 input[type="submit"] {
@@ -289,6 +343,7 @@ input[type="submit"] {
     text-align: center;
     margin: 5px;
     border-radius: 7px;
+    font-family: 'Patrick Hand';
 }
 
 
@@ -308,6 +363,12 @@ input[type="submit"] {
 
 /* Modal Content/Box */
 .modal-content {
+.images {
+    background-image:url("hiii.jpg");
+ background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;}
+
     background-color: #fefefe;
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
@@ -332,6 +393,7 @@ input[type="submit"] {
 
 /* Modal Header */
 .modal-header {
+    font-family: 'Patrick Hand', cursive;
     padding: 2px 16px;
     background-color: #5cb85c;
     color: white;
@@ -364,9 +426,11 @@ input[type="submit"] {
 footer.footsy {
     background-color: gray;
     padding-left: 10%;
+    margin-bottom: 0;
 }
 
 footer.footsy h1 {
+    font-family: 'Patrick Hand', cursive;
     color: white;
     font-size: 35px;
 }
@@ -381,17 +445,13 @@ footer.footsy ul li {
     color: white;
     font-size: 22px;
     line-height: 1.5;
-}
-
-.img-feed {
-    background: url() no-repeat;
-    background-size: cover;
+    font-family: 'Patrick Hand';
 }
 
 
 /*######## Mobile ##########*/
 
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 980px) {
     ul.topnav li:not(:nth-child(1)) {
         display: none;
     }
@@ -421,7 +481,18 @@ footer.footsy ul li {
         text-align: left;
     }
     
+    #myVideo {
+        position: relative;
+        right: 0;
+        bottom: 0;
+        width: 100%; 
+        height: 551px;
+        filter: blur(5px);
+        background: cover;
+    }
+    
     h1.section2Header {
+        font-family: 'Patrick Hand', cursive;
         font-size: 40px;
         text-align: center;
     }
@@ -443,10 +514,17 @@ footer.footsy ul li {
         display: block;
     }
     
-    .box {
+    div.box {
         padding: 5px;
         display: block;
-        
+        opacity: 0.9;
+    }
+    
+    div.box2 {
+        padding: 5px;
+        display: block;
+        opacity: 0.9;
+        width: 100%;
     }
     
     div.vvImg {
@@ -463,11 +541,19 @@ footer.footsy ul li {
     }
     
     input[type="email"] {
-        width: 350px;
+        width: auto;
+    }
+    
+    input[type="text"] {
+        width: auto;
+    }
+    
+    input[type="number"] {
+        width: auto;
     }
     
     input[type="password"] {
-        width: 350px;
+        width: auto;
         margin-bottom: auto;
     }
     
