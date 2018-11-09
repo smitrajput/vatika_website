@@ -23,6 +23,7 @@ class CreateTable(LoginRequiredMixin, CreateView):
 class CreateLawn(LoginRequiredMixin, CreateView):
     model = BookLawn
     form_class = BookLawnForm
+    template_name = 'Table/booklawn_form.html'
 
     def form_valid(self, form):
         table = form.save(commit=False)

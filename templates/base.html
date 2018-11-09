@@ -63,6 +63,12 @@
                 {% else %}
                      <li><a href="{% url 'accounts:login' %}" >Sign in</a></li>
                 {% endif %}
+                <li class="menu-has-children"> <a href="">Reserve</a>
+                  <ul>
+                    <li><a href="{% url 'Table:book_table' %}">Book Table</a></li>
+                    <li><a href="{% url 'Table:book_lawn' %}">Book Lawn</a></li>
+                  </ul>
+                </li>
                 <li><a href="contact.html">Contact</a></li>
               </ul>
             </nav><!-- #nav-menu-container -->
