@@ -12,14 +12,14 @@ $(document).ready(function() {
     $(".fitscreen").css("height", fitscreen);
 
 
-    // ------- Datepicker  js --------//  
+    // ------- Datepicker  js --------//
 
       $( function() {
         $( ".date-picker" ).datepicker();
       } );
 
 
-    //------- Niceselect  js --------//  
+    //------- Niceselect  js --------//
 
     if (document.getElementById("default-select")) {
         $('select').niceSelect();
@@ -29,9 +29,9 @@ $(document).ready(function() {
     };
     if (document.getElementById("service-select")) {
         $('select').niceSelect();
-    };    
+    };
 
-    //------- Lightbox  js --------//  
+    //------- Lightbox  js --------//
 
     $('.img-gal').magnificPopup({
         type: 'image',
@@ -48,7 +48,7 @@ $(document).ready(function() {
         fixedContentPos: false
     });
 
-    //------- Superfish nav menu  js --------//  
+    //------- Superfish nav menu  js --------//
 
     $('.nav-menu').superfish({
         animation: {
@@ -58,12 +58,12 @@ $(document).ready(function() {
     });
 
 
-    //------- Filter  js --------//  
+    //------- Filter  js --------//
 
       $('.filters li').click(function(){
         $('.filters li').removeClass('active');
         $(this).addClass('active');
-        
+
         var data = $(this).attr('data-filter');
         $grid.isotope({
           filter: data
@@ -81,20 +81,20 @@ $(document).ready(function() {
             })
       };
 
-    //------- Owl Carusel  js --------//  
+    //------- Owl Carusel  js --------//
 
     $('.active-review-carusel').owlCarousel({
         items:1,
         loop:true,
         autoplay:true,
-        autoplayHoverPause: true,        
-        smartSpeed:500,          
+        autoplayHoverPause: true,
+        smartSpeed:500,
         margin:30,
         dots: true
     });
 
 
-    //------- Mobile Nav  js --------//  
+    //------- Mobile Nav  js --------//
 
     if ($('#nav-menu-container').length) {
         var $mobile_nav = $('#nav-menu-container').clone().prop({
@@ -135,7 +135,7 @@ $(document).ready(function() {
         $("#mobile-nav, #mobile-nav-toggle").hide();
     }
 
-    //------- Smooth Scroll  js --------//  
+    //------- Smooth Scroll  js --------//
 
     $('.nav-menu a, #mobile-nav a, .scrollto').on('click', function() {
         if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
@@ -220,7 +220,7 @@ $(document).ready(function() {
 
 
 
-    //------- Header Scroll Class  js --------//  
+    //------- Header Scroll Class  js --------//
 
     $(window).scroll(function() {
         if ($(this).scrollTop() > 100) {
@@ -230,7 +230,7 @@ $(document).ready(function() {
         }
     });
 
-    //------- Google Map  js --------//  
+    //------- Google Map  js --------//
 
     if (document.getElementById("map")) {
         google.maps.event.addDomListener(window, 'load', init);
@@ -359,14 +359,14 @@ $(document).ready(function() {
             var mapElement = document.getElementById('map');
             var map = new google.maps.Map(mapElement, mapOptions);
             var marker = new google.maps.Marker({
-                position: new google.maps.LatLng(40.6700, -73.9400),
+                position: new google.maps.LatLng(23.166601, 72.637119),
                 map: map,
                 title: 'Snazzy!'
             });
         }
     }
 
-    //------- Mailchimp js --------//  
+    //------- Mailchimp js --------//
 
     $(document).ready(function() {
         $('#mc_embed_signup').find('form').ajaxChimp();
