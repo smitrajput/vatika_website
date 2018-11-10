@@ -1,5 +1,8 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView,CreateView
+from django.contrib.auth.mixins import LoginRequiredMixin
+from .models import Contact
+from .forms import ContactForm
 # Create your views here.
 app_name = 'home'
 class AboutPage(TemplateView):
@@ -7,3 +10,8 @@ class AboutPage(TemplateView):
 
 class HomePage(TemplateView):
     template_name = 'base.html'
+
+class CreateContact(LoginRequiredMixin, CreateView):
+    model = Contact
+    form_class = ContactForm
+    template_name = 'home/contact.html'
