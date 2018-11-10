@@ -11,7 +11,7 @@ class AboutPage(TemplateView):
 class HomePage(TemplateView):
     template_name = 'base.html'
 
-class CreateContact(LoginRequiredMixin, CreateView):
+class CreateContact(CreateView):
     model = Contact
     form_class = ContactForm
     template_name = 'home/contact.html'

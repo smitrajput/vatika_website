@@ -357,12 +357,15 @@ $(document).ready(function() {
                 }]
             };
             var mapElement = document.getElementById('map');
-            var map = new google.maps.Map(mapElement, mapOptions);
-            var marker = new google.maps.Marker({
-                position: new google.maps.LatLng(23.166601, 72.637119),
-                map: map,
-                title: 'Snazzy!'
-            });
+            var map = new google.maps.Map(document.getElementById('map'), {
+                          center: {lat: 23.166601, lng:  72.637119},
+                          zoom: 8
+                        });
+            // var marker = new google.maps.Marker({
+            //     position: new google.maps.LatLng(23.166601, 72.637119),
+            //     map: map,
+            //     title: 'Snazzy!'
+            // });
         }
     }
 
