@@ -5,6 +5,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import BookTableForm, BookLawnForm
 from django.core.mail import send_mail
 from django.contrib import messages
+from django.contrib.auth.decorators import user_passes_test, login_required
+import datetime
 
 from django.contrib.auth import get_user_model
 User = get_user_model()
@@ -45,3 +47,9 @@ class TableListView(LoginRequiredMixin, TemplateView):
         query1 = BookTable.objects.filter(booked_by=self.request.user).order_by('time')
         context = {'bookings':query1}
         return render(request, self.template_name, context)
+
+@login_required
+@user_passes_test(lambda u: u.is_superuser)
+def AdminTableList(request):
+    query1 = BookTable.objects.filter(date__gte=datetime.date.today()).order_by('date')
+    return render(request,'Table/tables.html',{'query1':query1})
