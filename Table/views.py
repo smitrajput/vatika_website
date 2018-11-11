@@ -17,7 +17,7 @@ class CreateTable(LoginRequiredMixin, CreateView):
         table = form.save(commit=False)
         form.instance.booked_by = self.request.user
         send_mail('Village Vatiki','Hello, from Village Vatika.Your booking is confirmed','Raghu5910@outlook',['raghuram5910@gmail.com'],fail_silently=True)
-        messages.success(self.request, f'Table booked for the {self.request.user}!')
+        messages.success(self.request, f'Table reserved for {self.request.user}!, you will receive confirmation mail shortly!')
         return super(CreateTable, self).form_valid(form)
 
 class CreateLawn(LoginRequiredMixin, CreateView):

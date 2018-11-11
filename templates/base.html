@@ -76,14 +76,6 @@
       </div>
     </header><!-- #header -->
 
-    {% if messages %}
-      {% for message in messages %}
-        <div class="alert alert-{{ message.tags }}">
-          {{ message }}
-        </div>
-      {% endfor %}
-    {% endif %}
-
     <!-- start banner Area -->
     <section class="about-banner relative">
       <div class="overlay overlay-bg"></div>
@@ -94,6 +86,17 @@
                 <div class="col-md-8">
                 </div>
               </div>
+              {% if messages %}
+              <p></p>
+              <div class="container">
+                {% for message in messages %}
+                  <div class="alert alert-{{ message.tags }}">
+                    {{ message }}
+                  </div>
+                {% endfor %}
+              </div>
+              <p></p>
+              {% endif %}
               {% block banner_block %}
               {% endblock %}
           </div>

@@ -27,24 +27,24 @@
   <div class="container">
     <div class="row">
       <div class="active-review-carusel">
-        <div class="single-review">
           {% for rate in ratings %}
+            <div class="single-review">
             <img src="{% static 'img/customer1.jpg' %}" alt="customer image">
-            <h4>rate.review_by</h4>
+            <h3>{{ rate.review_by }}</h3>
             {% if rate.rating|add:0 == 5 %}
-              <h3>Excellent</h3>
+              <h4><i>Excellent</i></h4>
             {% elif rate.rating|add:0 == 4 %}
-              <h3>Good</h3>
+              <h4><i>Good</i></h4>
             {% elif rate.rating|add:0 == 3 %}
-              <h3>Moderate</h3>
+              <h4><i>Moderate</i></h4>
             {% elif rate.rating|add:0 == 2 %}
-              <h3>Poor</h3>
+              <h4><i>Poor</i></h4>
             {% elif rate.rating|add:0 == 1 %}
-              <h3>Very Poor</h3>
+              <h4><i>Very Poor</i></h4>
             {% endif %}
-            <p>rate.drop_a_note</p>
-          {% endfor %}
+            <p>{{ rate.drop_a_note }}</p>
         </div>
+      {% endfor %}
       </div>
     </div>
   </div>
