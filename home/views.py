@@ -9,7 +9,7 @@ class AboutPage(TemplateView):
     template_name = 'home/about.html'
 
 class HomePage(TemplateView):
-    template_name = 'base.html'
+    template_name = 'home/index.html'
 
 class CreateContact(CreateView):
     model = Contact

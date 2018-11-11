@@ -5,11 +5,12 @@ from django.urls import reverse
 
 class Menu(models.Model):
     MENU_CHOICES = (
-        ('BreakFast','BreakFast'),
-        ('Meals', 'Meals'),
-        ('Dinner', 'Dinner'),
-        ('Special', 'Special'),
-        ('All', 'All'),
+        ('Starters','Starters'),
+        ('Main', 'Main'),
+        ('Breads', 'Breads'),
+        ('Italian', 'Italian'),
+        ('Dessert', 'Desssert'),
+        ('Specials','specials'),
     )
     item_type = models.CharField(choices=MENU_CHOICES,default='All',max_length=20)
     item_name = models.CharField(max_length=100)
