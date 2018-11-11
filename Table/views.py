@@ -46,7 +46,7 @@ def reserve_table(request):
                 messages.success(request, f'Table reserved for {request.user}!, you will receive confirmation mail shortly!')
                 return redirect('home:home-page')
             elif query1 >= 2:
-                messages.success(request, f'You have already reserved two table for the same date')
+                messages.success(request, f'You have already reserved two tables for the same date')
                 return redirect('home:home-page')
             elif query2 >= 6:
                 messages.success(request, f'Sorry!Tables are full!')
