@@ -23,6 +23,13 @@ def validate_date(value):
         )
 
 
+def validate_contact(value):
+    if  (not value.isdigit()) or not len(value)==10:
+        raise ValidationError(
+            _('Please enter a valid mobile number'),
+            params={'value': value},
+        )
+
 def validate_persons(value):
     if value > 4:
         raise ValidationError(
@@ -39,7 +46,7 @@ def validate_time(value):
 class BookTable(models.Model):
     booked_by = models.ForeignKey(User,on_delete=models.CASCADE,related_name='booktables')
     customer = models.CharField(max_length=50)
-    contact = models.IntegerField()
+    contact = models.CharField(validators=[validate_contact],max_length=10)
     email = models.EmailField(max_length=50)
     total_persons = models.IntegerField(validators=[validate_persons])
     date = models.DateField(validators=[validate_date])
@@ -57,10 +64,10 @@ class BookTable(models.Model):
 class BookLawn(models.Model):
     booked_by = models.ForeignKey(User,on_delete=models.CASCADE,related_name='booklawns')
     customer = models.CharField(max_length=50)
-    contact = models.IntegerField()
+    contact = models.CharField(max_length=10,validators=[validate_contact])
     email = models.EmailField(max_length=50)
     total_persons = models.IntegerField()
-    date = models.DateField()
+    date = models.DateField(validators=[validate_date])
     time = models.TimeField()
 
     def __str__(self):
