@@ -65,6 +65,7 @@
                       <li> <a href="{% url 'accounts:logout' %}">Logout</a> </li>
                       {% if user.is_superuser %}
                         <li><a href="{% url 'Table:admintablelist' %}">Tables List</a> </li>
+                        <li><a href="{% url 'menu:add_menu' %}">Add Menu</a> </li>
                       {% endif %}
                      </ul>
                    </li>
@@ -80,7 +81,7 @@
                 <li><a href="{% url 'home:contact' %}">Contact</a></li>
 
                 <li><a href="{% url 'feedback:feedback' %}">Feedback</a></li>
-                
+
               </ul>
             </nav><!-- #nav-menu-container -->
         </div>

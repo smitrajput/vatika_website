@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import BookTable, BookLawn
 from django.views.generic import (TemplateView,ListView,CreateView)
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -11,16 +11,42 @@ import datetime
 from django.contrib.auth import get_user_model
 User = get_user_model()
 # Create your views here.
-class CreateTable(LoginRequiredMixin, CreateView):
-    model = BookTable
-    form_class = BookTableForm
+# class CreateTable(LoginRequiredMixin, CreateView):
+#     model = BookTable
+#     form_class = BookTableForm
+#
+#     def form_valid(self, form):
+#         table = form.save(commit=False)
+#         form.instance.booked_by = self.request.user
+#         send_mail('Village Vatiki','Hello, from Village Vatika.Your booking is confirmed','Raghu5910@outlook',['raghuram5910@gmail.com'],fail_silently=True)
+#         messages.success(self.request, f'Table reserved for {self.request.user}!, you will receive confirmation mail shortly!')
+#         return super(CreateTable, self).form_valid(form)
 
-    def form_valid(self, form):
-        table = form.save(commit=False)
-        form.instance.booked_by = self.request.user
-        send_mail('Village Vatiki','Hello, from Village Vatika.Your booking is confirmed','Raghu5910@outlook',['raghuram5910@gmail.com'],fail_silently=True)
-        messages.success(self.request, f'Table reserved for {self.request.user}!, you will receive confirmation mail shortly!')
-        return super(CreateTable, self).form_valid(form)
+@login_required
+def reserve_table(request):
+    if request.method == 'POST':
+        form = BookTableForm(request.POST)
+
+        if form.is_valid():
+            table = form.save(commit=False)
+            table.booked_by = request.user
+            query1 = len(BookTable.objects.filter(date=table.date,booked_by = request.user))
+            query2 = len(BookTable.objects.filter(date=table.date))
+            if query1 < 2 and query2 < 6:
+                table.save()
+                messages.success(request, f'Table reserved for {request.user}!, you will receive confirmation mail shortly!')
+                return redirect('home:home-page')
+            elif query1 >= 2:
+                messages.success(request, f'You have already reserved two table for the same date')
+                return redirect('home:home-page')
+            elif query2 >= 6:
+                messages.success(request, f'Sorry!Tables are full!')
+                return redirect('home:home-page')
+    else:
+        form = BookTableForm()
+
+    return render(request,'Table/booktable_form.html',{'form':form})
+
 
 class CreateLawn(LoginRequiredMixin, CreateView):
     model = BookLawn
@@ -33,11 +59,6 @@ class CreateLawn(LoginRequiredMixin, CreateView):
         send_mail('Village Vatiki','Hello, from Village Vatika.Your booking is confirmed','Raghu5910@outlook',['raghuram5910@gmail.com'],fail_silently=True)
         message.success(request, f'Table booked for the {self.request.user}!')
         return super(CreateLawn, self).form_valid(form)
-
-class MailSent(TemplateView):
-    template_name = 'Table/table_confirm_mail.html'
-
-
 
 class TableListView(LoginRequiredMixin, TemplateView):
     template_name = 'Table/booking_list.html'
