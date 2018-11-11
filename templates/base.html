@@ -69,12 +69,20 @@
                     <li><a href="{% url 'Table:book_lawn' %}">Book Lawn</a></li>
                   </ul>
                 </li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="{% url 'home:contact-page'%}">Contact</a></li>
               </ul>
             </nav><!-- #nav-menu-container -->
         </div>
       </div>
     </header><!-- #header -->
+
+    {% if messages %}
+      {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+          {{ message }}
+        </div>
+      {% endfor %}
+    {% endif %}
 
     <!-- start banner Area -->
     <section class="about-banner relative">
@@ -84,19 +92,10 @@
           <div class="about-content col-lg-12">
               <div class="row">
                 <div class="col-md-8">
-                  {% if messages %}
-                    {% for message in messages %}
-                      <div class="alert alert-{{ message.tags }}">
-                        {{ message }}
-                      </div>
-                    {% endfor %}
-                  {% endif %}
                 </div>
               </div>
               {% block banner_block %}
               {% endblock %}
-
-
           </div>
         </div>
       </div>
