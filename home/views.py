@@ -5,8 +5,8 @@ from .models import Contact
 from .forms import ContactForm
 # Create your views here.
 app_name = 'home'
-class AboutPage(TemplateView):
-    template_name = 'home/about.html'
+class GalleryPage(TemplateView):
+    template_name = 'home/gallery.html'
 
 class HomePage(TemplateView):
     template_name = 'home/index.html'
