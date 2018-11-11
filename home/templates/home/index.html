@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block banner_block %}
+<a href="{% url 'Table:book_table' %}" class="primary-btn text-uppercase">Reserve Table</a>
+{% endblock %}
 {% block body_block %}
 <!-- Start home-about Area -->
 <section class="home-about-area section-gap">
@@ -19,4 +22,33 @@
   </div>
 </section>
 <!-- End home-about Area -->
+
+<section class="review-area section-gap">
+  <div class="container">
+    <div class="row">
+      <div class="active-review-carusel">
+        <div class="single-review">
+          {% for rate in ratings %}
+            <img src="{% static 'img/customer1.jpg' %}" alt="customer image">
+            <h4>rate.review_by</h4>
+            {% if rate.rating|add:0 == 5 %}
+              <h3>Excellent</h3>
+            {% elif rate.rating|add:0 == 4 %}
+              <h3>Good</h3>
+            {% elif rate.rating|add:0 == 3 %}
+              <h3>Moderate</h3>
+            {% elif rate.rating|add:0 == 2 %}
+              <h3>Poor</h3>
+            {% elif rate.rating|add:0 == 1 %}
+              <h3>Very Poor</h3>
+            {% endif %}
+            <p>rate.drop_a_note</p>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End review Area -->
+
 {% endblock %}

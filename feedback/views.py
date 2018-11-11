@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import CreateView
+from django.views.generic import CreateView, ListView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Feedback
 from .forms import FeedbackForm
@@ -13,3 +13,8 @@ class CreateFeedback(LoginRequiredMixin, CreateView):
         feedback = form.save(commit=False)
         form.instance.review_by = self.request.user
         return super(CreateFeedback,self).form_valid(form)
+
+class DisplayRatings(ListView):
+    model = Feedback
+    context_object_name = 'ratings'
+    template_name = 'home/index.html'

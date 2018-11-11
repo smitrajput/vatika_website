@@ -7,11 +7,11 @@ User = get_user_model()
 class Feedback(models.Model):
 
     RATING_CHOICES = (
-        (1, '1'),
-        (2, '2'),
-        (3, '3'),
-        (4, '4'),
-        (5, '5'),
+        (5, 'Excellent'),
+        (4, 'Good'),
+        (3, 'Moderate'),
+        (2, 'Poor'),
+        (1, 'Very Poor'),
     )
 
     review_by = models.ForeignKey(User,on_delete=models.CASCADE,related_name='reviews')
