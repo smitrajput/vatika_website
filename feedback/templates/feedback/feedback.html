@@ -2,6 +2,12 @@
 {% load static %}
 {% load crispy_forms_tags %}
 {% block title %}Feedback{% endblock %}
+{% block banner_block %}
+<h1 class="text-white">
+  Feedback
+</h1>
+<p class="text-white link-nav"><a href="{% url 'home:home-page' %}">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="{% url 'feedback:feedback' %}"> Feedback</a></p>
+{% endblock %}
 {% block body_block %}
 <p></p>
 <p></p>

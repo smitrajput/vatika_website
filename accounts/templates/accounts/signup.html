@@ -5,6 +5,12 @@
 {% block stylesheet %}
 <link rel="stylesheet" href="{% static "css/gf.css" %}">
 {% endblock %}
+{% block banner_block %}
+<h1 class="text-white">
+ SignUp
+</h1>
+<p class="text-white link-nav"><a href="{% url 'home:home-page' %}">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="{% url 'accounts:signup' %}"> Menus</a></p>
+{% endblock %}
 {% block body_block %}
 <p></p>
 <p></p>

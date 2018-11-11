@@ -16,11 +16,7 @@
   <meta charset="UTF-8">
   <!-- Site Title -->
   <title>{% block title %}Village Vatika{% endblock %}</title>
-
   <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
-    <!--
-    CSS
-    ============================================= -->
     <link rel="stylesheet" href="{% static "css/linearicons.css" %}">
     <link rel="stylesheet" href="{% static "css/font-awesome.min.css" %}">
     <link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
@@ -31,6 +27,16 @@
     <link rel="stylesheet" href="{% static "css/owl.carousel.css" %}">
     <link rel="stylesheet" href="{% static "css/main.css" %}">
     {% block stylesheet %}{% endblock %}
+    <style media="screen">
+    .fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    }
+    </style>
   </head>
   <body>
     <header id="header">
@@ -82,10 +88,10 @@
       <div class="container">
         <div class="row d-flex align-items-center justify-content-center">
           <div class="about-content col-lg-12">
-              <div class="row">
+              <!-- <div class="row">
                 <div class="col-md-8">
                 </div>
-              </div>
+              </div> -->
               {% if messages %}
               <p></p>
               <div class="container">
@@ -141,7 +147,11 @@
             </div>
             <div class="col-lg-4  col-md-6 col-sm-6">
               <div class="single-footer-widget">
-
+                <h4>Social accounts</h4>
+                <a href="https://facebook.com/villagevatika"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-dribbble"></i></a>
+                <a href="#"><i class="fa fa-behance"></i></a>
               </div>
               </div>
             </div>
