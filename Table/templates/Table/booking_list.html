@@ -1,9 +1,31 @@
 {% extends 'base.html' %}
 {% block title %}Feedback{% endblock %}
 {% block body_block %}
-  {% for booktable in bookings %}
-
+  <!-- {% for booktable in bookings %}
     <h2>{{booktable.customer}} , {{booktable.date}}</h2>
-
-  {% endfor %}
+  {% endfor %} -->
+  <p></p>
+  <p></p>
+<div class="container">
+  <table class="table table-striped table-bordered">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Total Guests</th>
+        <th scope="col">Date</th>
+        <th scope="col">Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for booktable in bookings %}
+        <tr>
+          <th scope="row">{{ booktable.customer }}</th>
+          <td>{{ booktable.total_persons }}</td>
+          <td>{{ booktable.date }}</td>
+          <td>{{ booktable.time }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
 {% endblock %}
