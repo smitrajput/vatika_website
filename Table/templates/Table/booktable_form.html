@@ -1,7 +1,13 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load crispy_forms_tags %}
-{% block title %}Reservation{% endblock %}
+{% block title %}Reserve Table{% endblock %}
+{% block banner_block %}
+<h1 class="text-white">
+  Reserve Table
+</h1>
+<p class="text-white link-nav"><a href="{% url 'home:home-page' %}">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="{% url 'Table:book_table' %}"> Reserve Table</a></p>
+{% endblock %}
 {% block stylesheet %}
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/ui-lightness/jquery-ui.css">
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
