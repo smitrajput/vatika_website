@@ -1,9 +1,10 @@
 from django.urls import path
 from . import views
+from feedback import views as feedviews
 
 
 urlpatterns = [
-    path('',views.HomePage.as_view(),name='home-page'),
-    path('about/',views.AboutPage.as_view(), name = "about-page"),
+    path('',feedviews.DisplayRatings.as_view(),name='home-page'),
+    path('gallery/',views.GalleryPage.as_view(), name = "gallery-page"),
     path('contact/',views.CreateContact.as_view(),name='contact'),
 ]

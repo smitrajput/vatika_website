@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %}Feedback{% endblock %}
+{% block title %}Reservations{% endblock %}
 {% block body_block %}
   <p></p>
   <p></p>
@@ -11,15 +11,17 @@
         <th scope="col">Total Guests</th>
         <th scope="col">Date</th>
         <th scope="col">Time</th>
+        <th scope="col">Contact</th>
       </tr>
     </thead>
     <tbody>
-      {% for booktable in bookings %}
+      {% for booktable in query1 %}
         <tr>
           <th scope="row">{{ booktable.customer }}</th>
           <td>{{ booktable.total_persons }}</td>
           <td>{{ booktable.date }}</td>
           <td>{{ booktable.time }}</td>
+          <td>{{ booktable.contact }}</td>
         </tr>
       {% endfor %}
     </tbody>

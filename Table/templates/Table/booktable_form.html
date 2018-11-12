@@ -1,16 +1,33 @@
 {% extends 'base.html' %}
+{% load static %}
 {% load crispy_forms_tags %}
-{% block title %}Reservation{% endblock %}
+{% block title %}Reserve Table{% endblock %}
+{% block banner_block %}
+<h1 class="text-white">
+  Reserve Table
+</h1>
+<p class="text-white link-nav"><a href="{% url 'home:home-page' %}">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="{% url 'Table:book_table' %}"> Reserve Table</a></p>
+{% endblock %}
 {% block stylesheet %}
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/ui-lightness/jquery-ui.css">
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+    <link rel="stylesheet" href="{% static 'css/timepicker_ass.css' %}">
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script src="https://rawgit.com/fgelinas/timepicker/master/jquery.ui.timepicker.js"></script>
     <script>
       $(function() {
-        $( ".datepicker" ).datepicker({
+        $( "#datepicker" ).datepicker({
           changeMonth: true,
           changeYear: true,
           yearRange: "1900:2018",
+        });
+      });
+    </script>
+    <script>
+      $(function() {
+        $( ".timepicker" ).timepicker({
+          showPeriodLabels: false,
         });
       });
     </script>
@@ -25,7 +42,7 @@
         to Confirm if You Come
         with Your Family</h1>
         <p class="text-white pt-20">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.
+          <!-- Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea. -->
         </p>
       </div>
       <div class="col-lg-5 reservation-right">
