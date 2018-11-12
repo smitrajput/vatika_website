@@ -17,6 +17,7 @@
   <!-- Site Title -->
   <title>{% block title %}Village Vatika{% endblock %}</title>
   <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/used_samkan.css' %}">
     <link rel="stylesheet" href="{% static "css/linearicons.css" %}">
     <link rel="stylesheet" href="{% static "css/font-awesome.min.css" %}">
     <link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
@@ -45,7 +46,10 @@
             <div class="row justify-content-center">
                 <div id="logo">
                   <a href="{% url "home:home-page" %}"><img src="{% static "img/vvlogo.png" %}" alt="" title="" /></a>
+                  <a href="{% url "home:home-page" %}"><h2 class="text-white vv_head">Village Vatika</h2></a>
+
                 </div>
+
             </div>
         </div>
       </div>

@@ -22,18 +22,18 @@
 
   <ul class="filter-wrap filters col-lg-12 no-padding">
       <li class="active" data-filter="*">All Menu</li>
-      <li data-filter=".breakfast">Breakfast</li>
-      <li data-filter=".lunch">Lunch</li>
-      <li data-filter=".dinner">Dinner</li>
-      <li data-filter=".budget-meal">Budget Meal</li>
-      <li data-filter=".buffet">Buffet</li>
+      <li data-filter=".breakfast">Starters</li>
+      <li data-filter=".lunch">Breads</li>
+      <li data-filter=".dinner">Specials</li>
+      <li data-filter=".budget-meal">Italian</li>
+      <li data-filter=".buffet">Dessert</li>
   </ul>
 
   <div class="filters-content">
     <div class="row grid">
     {% for menu in menu_list %}
-      {% if menu.item_type|stringformat:'s' == "BreakFast" %}
-        <div class="col-md-6 all">
+      {% if menu.item_type|stringformat:'s' == "Starters" %}
+        <div class="col-md-6 all breakfast">
           <div class="single-menu">
             <div class="title-wrap d-flex justify-content-between">
               <h4>{{ menu.item_name }}</h4>
@@ -42,7 +42,7 @@
             <p>{{ menu.item_description }}</p>
           </div>
         </div>
-      {% elif menu.item_type|stringformat:'s' == "Meals" %}
+      {% elif menu.item_type|stringformat:'s' == "Breads" %}
         <div class="col-md-6  all lunch">
           <div class="single-menu">
             <div class="title-wrap d-flex justify-content-between">
@@ -52,7 +52,37 @@
             <p>{{ menu.item_description }}</p>
           </div>
         </div>
-      {% endif %}
+        {% elif menu.item_type|stringformat:'s' == "Specials" %}
+          <div class="col-md-6 all dinner">
+            <div class="single-menu">
+              <div class="title-wrap d-flex justify-content-between">
+                <h4>{{ menu.item_name }}</h4>
+                <h4 class="price">{{ menu.item_price }}</h4>
+              </div>
+              <p>{{ menu.item_description }}</p>
+            </div>
+          </div>
+        {% elif menu.item_type|stringformat:'s' == "Italian" %}
+        <div class="col-md-6 all budget-meal">
+          <div class="single-menu">
+            <div class="title-wrap d-flex justify-content-between">
+              <h4>{{ menu.item_name }}</h4>
+              <h4 class="price">{{ menu.item_price }}</h4>
+            </div>
+            <p>{{ menu.item_description }}</p>
+          </div>
+        </div>
+        {% elif menu.item_type|stringformat:'s' == "Dessert" %}
+        <div class="col-md-6 all buffet">
+          <div class="single-menu">
+            <div class="title-wrap d-flex justify-content-between">
+              <h4>{{ menu.item_name }}</h4>
+              <h4 class="price">{{ menu.item_price }}</h4>
+            </div>
+            <p>{{ menu.item_description }}</p>
+          </div>
+        </div>
+        {% endif %}
     {% endfor %}
     </div>
   </div>
